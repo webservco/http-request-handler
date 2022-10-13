@@ -46,7 +46,7 @@
         "check:phan": "vendor/bin/phan --config-file vendor/webservco/coding-standards/phan/config.php",
         "check:phpmd": "vendor/bin/phpmd src json vendor/webservco/coding-standards/phpmd/phpmd-rule-set.xml",
         "check:phpmd:public": "vendor/bin/phpmd public json vendor/webservco/coding-standards/phpmd/phpmd-rule-set.xml",
-        "check:phpstan": "vendor/bin/phpstan analyse config public src tests --ansi -c vendor/webservco/coding-standards/phpstan/phpstan.neon --level=9",
+        "check:phpstan": "vendor/bin/phpstan analyse config public src tests --ansi -c vendor/webservco/coding-standards/phpstan/phpstan.neon --level=max",
         "check:psalm": "vendor/bin/psalm --config=vendor/webservco/coding-standards/psalm/psalm.xml --no-diff",
         "check:style": "vendor/bin/phpcs --standard=.phpcs/php-coding-standard.xml --extensions=php -sp config public src tests",
         "check:style:psr": "vendor/bin/phpcs --standard=PSR12 --extensions=php -sp config public src tests",
