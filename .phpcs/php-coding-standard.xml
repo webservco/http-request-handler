@@ -7,7 +7,7 @@
         <properties>
 			<property name="rootNamespaces" type="array">
 				<element key="src/WebServCo" value="WebServCo" />
-                <element key="tests/unit" value="Tests" />
+                <element key="tests/Unit" value="Tests\Unit" />
 			</property>
 		</properties>
 	</rule>
