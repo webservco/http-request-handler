@@ -32,29 +32,28 @@
         "phpcompatibility/php-compatibility": "^9",
         "phpmd/phpmd": "^2",
         "phpstan/phpstan-strict-rules": "^1",
+        "phpstan/phpstan-phpunit": "^1",
         "phpstan/phpstan" : "^1",
-        "phpunit/phpunit": "^9",
+        "phpunit/phpunit": "^10",
         "slevomat/coding-standard": "^8",
         "squizlabs/php_codesniffer" : "^3",
-        "vimeo/psalm": "^4",
+        "vimeo/psalm": "^5",
         "webservco/coding-standards": "@dev"
     },
     "require": {
         "php" : "^8.1"
     },
     "scripts": {
+        "check:lint": "vendor/bin/parallel-lint bin config public resources src tests",
         "check:phan": "vendor/bin/phan --config-file vendor/webservco/coding-standards/phan/config.php",
-        "check:phpmd": "vendor/bin/phpmd src json vendor/webservco/coding-standards/phpmd/phpmd-rule-set.xml",
-        "check:phpmd:public": "vendor/bin/phpmd public json vendor/webservco/coding-standards/phpmd/phpmd-rule-set.xml",
-        "check:phpstan": "vendor/bin/phpstan analyse config public src tests --ansi -c vendor/webservco/coding-standards/phpstan/phpstan.neon --level=max",
+        "check:phpcs": "vendor/bin/phpcs --standard=.phpcs/php-coding-standard.xml --extensions=php -sp bin config public resources src tests",
+        "check:phpmd": "vendor/bin/phpmd bin,config,public,resources,src,tests json vendor/webservco/coding-standards/phpmd/phpmd-rule-set.xml",
+        "check:phpstan": "vendor/bin/phpstan analyse bin config public resources src tests --ansi -c vendor/webservco/coding-standards/phpstan/phpstan.neon --level=max",
         "check:psalm": "vendor/bin/psalm --config=vendor/webservco/coding-standards/psalm/psalm.xml --no-diff",
-        "check:style": "vendor/bin/phpcs --standard=.phpcs/php-coding-standard.xml --extensions=php -sp config public src tests",
-        "check:style:psr": "vendor/bin/phpcs --standard=PSR12 --extensions=php -sp config public src tests",
-        "check:structure": "vendor/bin/pds-skeleton validate .",
-        "fix:style": "vendor/bin/phpcbf --standard=.phpcs/php-coding-standard.xml --extensions=php -sp config public src tests",
-        "lint": "vendor/bin/parallel-lint config public src tests",
-        "test": "vendor/bin/phpunit --colors=always --configuration .phpunit/phpunit.xml",
-        "test:d" : "vendor/bin/phpunit --testdox --configuration .phpunit/phpunit.xml"
+        "check:skeleton": "vendor/bin/pds-skeleton validate .",
+        "fix:phpcs": "vendor/bin/phpcbf --standard=.phpcs/php-coding-standard.xml --extensions=php -sp bin config public resources src tests",
+        "test" : "vendor/bin/phpunit --colors=always --configuration vendor/webservco/coding-standards/phpunit/phpunit-10.xml --display-deprecations --display-errors --display-incomplete --display-notices --display-skipped --display-warnings",
+        "test:dox" : "@test --testdox"
     },
     "type" : "library"
 }
