@@ -2,6 +2,8 @@
 
 A PHP component/library project skeleton.
 
+---
+
 ## Usage
 
 - create project repository;
@@ -18,3 +20,12 @@ git add composer.json
 git commit -m 'Customize'
 git push -u origin main
 ```
+
+---
+
+## Index
+
+- webservco/component (project template)
+- webservco/configuration
+- webservco/data-transfer
+- webservco/log
