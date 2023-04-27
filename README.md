@@ -27,5 +27,6 @@ git push -u origin main
 
 - webservco/component (project template)
 - webservco/configuration
+- webservco/database
 - webservco/data-transfer
 - webservco/log
