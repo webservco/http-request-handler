@@ -6,7 +6,7 @@ A PHP component/library project skeleton.
 
 ## Usage
 
-- create project repository;
+- [Create project repository](https://github.com/organizations/webservco/repositories/new);
 
 ```shell
 git clone git@github.com:webservco/component.git {component}
