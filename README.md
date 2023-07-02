@@ -13,7 +13,7 @@ Project skeleton / project started.
 ### Customize
 
 ```shell
-COMPONENT_NAME='dependency-container'
+COMPONENT_NAME='COMPONENT_NAME'
 git clone git@github.com:webservco/component.git $COMPONENT_NAME
 cd $COMPONENT_NAME
 git remote set-url origin git@github.com:webservco/$COMPONENT_NAME.git
@@ -38,5 +38,6 @@ git add README.md && git add composer.json && git commit -m 'Customize' && git p
 - webservco/database-legacy
 - webservco/data-transfer
 - webservco/dependency-container
+- webservco/document-object-model
 - webservco/log
 - webservco/view
