@@ -8,7 +8,7 @@ Project skeleton / project starter.
 
 ## Workflow
 
-### [Create project repository](https://github.com/organizations/webservco/repositories/new);
+### [Create project repository](https://github.com/organizations/webservco/repositories/new)
 
 ### Set up project name
 
