@@ -13,12 +13,13 @@ Project skeleton / project started.
 ### Customize
 
 ```shell
-git clone git@github.com:webservco/component.git {component}
+git clone git@github.com:webservco/component.git __COMPONENT__
 cd {component}
-git remote set-url origin git@github.com:webservco/{component}.git
+git remote set-url origin git@github.com:webservco/__COMPONENT__.git
 rm -f src/WebServCo/.gitignore && git add src/WebServCo && git commit -m 'Init src'
-vim README.md # (name, description)
-vim composer.json # (name)
+printf '%s\n' '# webservco/__COMPONENT__' '' 'A PHP component/library.' '' '---' > README.md
+#ag --json -l -Q 'webservco/component' . | xargs sed -i -e 's|"name" : "webservco/component"|"name" : "webservco/__COMPONENT__"|g'
+sed -i -e 's|"name" : "webservco/component"|"name" : "webservco/__COMPONENT__"|g' composer.json
 git add README.md && git add composer.json && git commit -m 'Customize' && git push -u origin main
 ```
 
