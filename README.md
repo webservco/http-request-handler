@@ -27,6 +27,7 @@ git add README.md && git add composer.json && git commit -m 'Customize' && git p
 
 ## Index
 
+- webservco/application
 - webservco/command
 - webservco/component (project template)
 - webservco/configuration
@@ -36,5 +37,6 @@ git add README.md && git add composer.json && git commit -m 'Customize' && git p
 - webservco/database
 - webservco/database-legacy
 - webservco/data-transfer
+- webservco/dependency-container
 - webservco/log
 - webservco/view
