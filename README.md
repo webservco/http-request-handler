@@ -53,13 +53,11 @@ cd ~/p/webservco
 - webservco/document-object-model
 - webservco/emitter
 - webservco/environment
-
 - webservco/error
 - webservco/exception
 - webservco/http
+- webservco/log
 - webservco/middleware
 - webservco/route
 - webservco/stopwatch
-
-- webservco/log
 - webservco/view
