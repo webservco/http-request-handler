@@ -32,6 +32,7 @@ git add README.md && \
 git add composer.json && \
 git commit -m 'Customize' && \
 git push -u origin main && \
+mkdir bin config public resources tests && \
 cd ~/p/webservco
 ```
 
