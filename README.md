@@ -4,21 +4,19 @@ A PHP component/library.
 
 ---
 
-Project skeleton / project started.
+Project skeleton / project starter.
 
-## Usage
+## Workflow
 
-- [Create project repository](https://github.com/organizations/webservco/repositories/new);
+### [Create project repository](https://github.com/organizations/webservco/repositories/new);
 
-### Customize
-
-#### Set up project name
+### Set up project name
 
 ```sh
 COMPONENT_NAME='COMPONENT_NAME'
 ```
 
-#### Run customization commands
+### Run customization commands
 
 ```sh
 cd ~/p/webservco && \
@@ -35,6 +33,12 @@ git push -u origin main && \
 mkdir bin config public resources tests && \
 cd ~/p/webservco
 ```
+
+### Add code
+
+### Publish tag
+
+### [Publish on packagist](https://packagist.org/packages/submit)
 
 ---
 
