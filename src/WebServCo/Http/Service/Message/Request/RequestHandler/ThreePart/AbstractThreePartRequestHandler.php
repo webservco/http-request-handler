@@ -9,7 +9,6 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use UnexpectedValueException;
 use WebServCo\Controller\Contract\ControllerInstantiatorInterface;
-use WebServCo\DependencyContainer\Contract\LocalDependencyContainerInterface;
 use WebServCo\Http\Service\Message\Request\RequestHandler\AbstractRequestHandler;
 use WebServCo\Route\Contract\ThreePart\RoutePartsInterface;
 use WebServCo\View\Contract\ViewRendererListInterface;
@@ -35,11 +34,10 @@ abstract class AbstractThreePartRequestHandler extends AbstractRequestHandler im
      */
     public function __construct(
         ControllerInstantiatorInterface $controllerInstantiator,
-        LocalDependencyContainerInterface $localDependencyContainer,
         ViewRendererResolverInterface $viewRendererResolver,
         private array $routesConfiguration,
     ) {
-        parent::__construct($controllerInstantiator, $localDependencyContainer, $viewRendererResolver);
+        parent::__construct($controllerInstantiator, $viewRendererResolver);
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface

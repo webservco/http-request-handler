@@ -10,7 +10,6 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
 use UnexpectedValueException;
 use WebServCo\Controller\Contract\ControllerInstantiatorInterface;
-use WebServCo\DependencyContainer\Contract\LocalDependencyContainerInterface;
 use WebServCo\Route\Contract\RouteConfigurationInterface;
 use WebServCo\View\Contract\HTMLRendererInterface;
 use WebServCo\View\Contract\JSONRendererInterface;
@@ -33,7 +32,6 @@ final class ExceptionRequestHandler implements RequestHandlerInterface
 
     public function __construct(
         private ControllerInstantiatorInterface $controllerInstantiator,
-        private LocalDependencyContainerInterface $localDependencyContainer,
         private LoggerInterface $logger,
         private ViewRendererResolverInterface $viewRendererResolver,
         private RouteConfigurationInterface $routeConfiguration,
@@ -68,11 +66,7 @@ final class ExceptionRequestHandler implements RequestHandlerInterface
             $viewRenderer = JSONRenderer::class;
         }
 
-        $controller = $this->controllerInstantiator->instantiateController(
-            $this->localDependencyContainer,
-            $this->routeConfiguration,
-            $viewRenderer,
-        );
+        $controller = $this->controllerInstantiator->instantiateController($this->routeConfiguration, $viewRenderer);
 
         return $controller->handle($request);
     }

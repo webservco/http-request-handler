@@ -7,7 +7,6 @@ namespace WebServCo\Http\Service\Message\Request\RequestHandler;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use WebServCo\Controller\Contract\ControllerInstantiatorInterface;
-use WebServCo\DependencyContainer\Contract\LocalDependencyContainerInterface;
 use WebServCo\Route\Contract\RouteConfigurationInterface;
 use WebServCo\View\Contract\ViewRendererListInterface;
 use WebServCo\View\Contract\ViewRendererResolverInterface;
@@ -16,7 +15,6 @@ abstract class AbstractRequestHandler implements ViewRendererListInterface
 {
     public function __construct(
         private ControllerInstantiatorInterface $controllerInstantiator,
-        private LocalDependencyContainerInterface $localDependencyContainer,
         private ViewRendererResolverInterface $viewRendererResolver,
     ) {
     }
@@ -30,11 +28,7 @@ abstract class AbstractRequestHandler implements ViewRendererListInterface
 
         $viewRenderer = $this->viewRendererResolver->getViewRendererClass($availableViewRenderers, $request);
 
-        $controller = $this->controllerInstantiator->instantiateController(
-            $this->localDependencyContainer,
-            $routeConfiguration,
-            $viewRenderer,
-        );
+        $controller = $this->controllerInstantiator->instantiateController($routeConfiguration, $viewRenderer);
 
         return $controller->handle($request);
     }
