@@ -35,7 +35,8 @@ abstract class AbstractThreePartRequestHandler extends AbstractRequestHandler im
     public function __construct(
         ControllerInstantiatorInterface $controllerInstantiator,
         ViewRendererResolverInterface $viewRendererResolver,
-        private array $routesConfiguration,
+        // Routes configuration not private because the class is abstract and can be extended.
+        protected array $routesConfiguration,
     ) {
         parent::__construct($controllerInstantiator, $viewRendererResolver);
     }
