@@ -12,9 +12,11 @@ use UnexpectedValueException;
 use WebServCo\Controller\Contract\ControllerInstantiatorInterface;
 use WebServCo\Route\Contract\RouteConfigurationInterface;
 use WebServCo\View\Contract\HTMLRendererInterface;
+use WebServCo\View\Contract\JSONAPIRendererInterface;
 use WebServCo\View\Contract\JSONRendererInterface;
 use WebServCo\View\Contract\ViewRendererResolverInterface;
 use WebServCo\View\Service\HTMLRenderer;
+use WebServCo\View\Service\JSONAPIRenderer;
 use WebServCo\View\Service\JSONRenderer;
 
 /**
@@ -27,6 +29,7 @@ final class ExceptionRequestHandler implements RequestHandlerInterface
 {
     private const AVAILABLE_VIEW_RENDERERS = [
         HTMLRendererInterface::class => HTMLRenderer::class,
+        JSONAPIRendererInterface::class => JSONAPIRenderer::class,
         JSONRendererInterface::class => JSONRenderer::class,
     ];
 
