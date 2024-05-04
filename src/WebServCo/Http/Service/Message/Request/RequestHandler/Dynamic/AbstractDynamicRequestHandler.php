@@ -11,7 +11,6 @@ use UnexpectedValueException;
 use WebServCo\Controller\Contract\ControllerInstantiatorInterface;
 use WebServCo\Http\Contract\Message\Request\Server\ServerRequestAttributeServiceInterface;
 use WebServCo\Http\Service\Message\Request\RequestHandler\AbstractRequestHandler;
-use WebServCo\Route\Contract\Dynamic\RoutePartsInterface;
 use WebServCo\View\Contract\ViewRendererListInterface;
 use WebServCo\View\Contract\ViewRendererResolverInterface;
 
@@ -27,7 +26,6 @@ use function sprintf;
  */
 abstract class AbstractDynamicRequestHandler extends AbstractRequestHandler implements
     RequestHandlerInterface,
-    RoutePartsInterface,
     ViewRendererListInterface
 {
     /**
@@ -35,7 +33,7 @@ abstract class AbstractDynamicRequestHandler extends AbstractRequestHandler impl
      */
     public function __construct(
         ControllerInstantiatorInterface $controllerInstantiator,
-        private ServerRequestAttributeServiceInterface $requestAttributeService,
+        protected ServerRequestAttributeServiceInterface $requestAttributeService,
         ViewRendererResolverInterface $viewRendererResolver,
         // Routes configuration not private because the class is abstract and can be extended.
         protected array $routesConfiguration,
