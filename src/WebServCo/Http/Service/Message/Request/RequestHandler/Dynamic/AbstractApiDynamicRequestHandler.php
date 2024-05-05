@@ -31,12 +31,14 @@ abstract class AbstractApiDynamicRequestHandler extends AbstractDynamicRequestHa
             throw new UnexpectedValueException('Route part 3 is required.');
         }
 
+        $routePart4 = $this->requestAttributeService->getRoutePart(4, $request);
+
         // In this custom situation, the route contains also the API version/
         $route = sprintf(
-            '%s/%s/%s',
+            '%s/%s%s',
             $routePart2,
             $routePart3,
-            $this->requestAttributeService->getRoutePart(4, $request) ?? '',
+            $routePart4 !== null ? sprintf('/%s', $routePart4) : '',
         );
 
         if (!array_key_exists($route, $this->routesConfiguration)) {
