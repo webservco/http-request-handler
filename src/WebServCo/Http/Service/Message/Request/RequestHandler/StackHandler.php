@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebServCo\Http\Service\Message\Request\RequestHandler;
 
+use Override;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -47,6 +48,7 @@ final class StackHandler implements RequestHandlerInterface
      *
      * PSR-15 interface method.
      */
+    #[Override]
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         // If no middleware in stack (not added, or exhausted):

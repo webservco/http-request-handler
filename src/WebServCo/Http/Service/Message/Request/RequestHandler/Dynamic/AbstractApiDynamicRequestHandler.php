@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebServCo\Http\Service\Message\Request\RequestHandler\Dynamic;
 
+use Override;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use UnexpectedValueException;
@@ -19,6 +20,7 @@ use function sprintf;
  */
 abstract class AbstractApiDynamicRequestHandler extends AbstractDynamicRequestHandler
 {
+    #[Override]
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $routePart2 = $this->requestAttributeService->getRoutePart(2, $request);

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebServCo\Http\Service\Message\Request\RequestHandler\Dynamic;
 
+use Override;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
@@ -41,6 +42,7 @@ abstract class AbstractDynamicRequestHandler extends AbstractRequestHandler impl
         parent::__construct($controllerInstantiator, $viewRendererResolver);
     }
 
+    #[Override]
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $route = $this->requestAttributeService->getRoutePart(2, $request);

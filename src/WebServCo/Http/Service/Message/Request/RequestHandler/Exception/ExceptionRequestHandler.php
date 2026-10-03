@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebServCo\Http\Service\Message\Request\RequestHandler\Exception;
 
+use Override;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
@@ -46,6 +47,7 @@ final class ExceptionRequestHandler implements RequestHandlerInterface
      *
      * Customization: make sure there is a fallback view renderer.
      */
+    #[Override]
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         /**
