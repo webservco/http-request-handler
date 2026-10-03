@@ -28,7 +28,7 @@ use WebServCo\View\Service\JSONRenderer;
  */
 final class ExceptionRequestHandler implements RequestHandlerInterface
 {
-    private const AVAILABLE_VIEW_RENDERERS = [
+    private const array AVAILABLE_VIEW_RENDERERS = [
         HTMLRendererInterface::class => HTMLRenderer::class,
         JSONAPIRendererInterface::class => JSONAPIRenderer::class,
         JSONRendererInterface::class => JSONRenderer::class,
