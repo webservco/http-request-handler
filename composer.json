@@ -20,7 +20,7 @@
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
-    "description" : "A PHP component/library.",
+    "description" : "A PHP component/library. PSR-15 request handlers, including a middleware stack, base handlers that pass a route to its controller, and a handler that renders error pages.",
     "homepage" : "https://webserv.co",
     "keywords" : [
         "component",
